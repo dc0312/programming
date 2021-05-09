@@ -2,7 +2,7 @@ package dp;
 
 public class KnapsackTopDown {
 
-    private static int knapsack(int[] wt, int[] val, int w, int n) {
+    private static void knapsack(int[] wt, int[] val, int w, int n) {
         int[][] T = new int[n + 1][w + 1];
         for (int i = 0; i < n + 1; i++) {
             for (int j = 0; j < w + 1; j++) {
@@ -21,13 +21,34 @@ public class KnapsackTopDown {
                 }
             }
         }
-        return T[n][w];
+
+        // uncomment this code to print table
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= w; j++)
+                System.out.printf("%4d", T[i][j]);
+            System.out.printf("\n");
+        }
+        System.out.println(T[n][w]);
+        int res = T[n][w];
+
+        while (res > 0 && n > 0) {
+            if (res == T[n - 1][w]) {
+                n--;
+                continue;
+            } else {
+                System.out.print(wt[n - 1] + " ");
+                res = res - val[n - 1];
+                w = w - wt[n - 1];
+                n--;
+            }
+        }
     }
 
     public static void main(String[] args) {
-        int[] wt = {2, 3, 5, 4, 7, 9};
-        int[] val = {3, 5, 7, 2, 4, 6};
-        int w = 15;
-        System.out.println("Max Val : " + knapsack(wt, val, w, wt.length));
+        int[] wt = {2, 1, 3, 4, 5};
+        int[] val = {7, 2, 3, 1, 4};
+        int w = 7;
+        //System.out.println("Max Val : " + knapsack(wt, val, w, wt.length));
+        knapsack(wt, val, w, wt.length);
     }
 }

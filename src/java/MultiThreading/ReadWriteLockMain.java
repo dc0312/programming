@@ -53,14 +53,48 @@ public class ReadWriteLockMain {
             }
         };
 
+        Thread reader3 = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    rw1.acquireReadLock();
+                    System.out.println("Read lock acquired : " + System.currentTimeMillis());
+                    System.out.println("Reading for 1 sec ");
+                    Thread.sleep(1000);
+                    rw1.releaseReadLock();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        Thread reader4 = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    rw1.acquireReadLock();
+                    System.out.println("Read lock acquired : " + System.currentTimeMillis());
+                    System.out.println("Reading for 1 sec ");
+                    Thread.sleep(1000);
+                    rw1.releaseReadLock();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
         reader1.start();
         writer1.start();
         Thread.sleep(3000);
         reader2.start();
+        reader3.start();
+        reader4.start();
         Thread.sleep(1000);
         writer2.start();
         reader1.join();
         reader2.join();
+        reader3.join();
+        reader4.join();
         writer2.join();
     }
 }
