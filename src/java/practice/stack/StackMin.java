@@ -1,21 +1,20 @@
 package practice.stack;
 
-
-class Link {
-    int data;
-    Link next;
-    Link oldMin;
-
-    Link(int data) {
-        this.data = data;
-    }
-
-    public void displayLink() {
-        System.out.print(data + "->");
-    }
-}
-
 class Stack {
+    class Link {
+        int data;
+        Link next;
+        Link oldMin;
+
+        Link(int data) {
+            this.data = data;
+        }
+
+        public void displayLink() {
+            System.out.print(data + "->");
+        }
+    }
+
     Link head;
     Link tail;
     int counter;
