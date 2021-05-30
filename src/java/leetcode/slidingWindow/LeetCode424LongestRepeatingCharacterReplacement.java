@@ -34,12 +34,10 @@ public class LeetCode424LongestRepeatingCharacterReplacement {
             freq[s.charAt(right) - 'A']++;
             mostFreqCharacter = Math.max(mostFreqCharacter, freq[s.charAt(right) - 'A']);
             int letterToChange = (right - left + 1) - mostFreqCharacter;
-
             if (letterToChange > k) {
                 freq[s.charAt(left) - 'A']--;
                 left++;
             }
-
             max = Math.max(max, right - left + 1);
             right++;
         }

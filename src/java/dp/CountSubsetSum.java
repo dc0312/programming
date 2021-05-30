@@ -1,5 +1,15 @@
 package dp;
 
+/*
+Count of subsets sum with a Given sum
+Given an array arr[] of length N and an integer X, the task is to find the number of subsets with sum equal to X.
+Example:
+
+Input: arr[] = {1, 2, 3, 3}, X = 6
+Output: 3
+All the possible subsets are {1, 2, 3},
+{1, 2, 3} and {3, 3}
+* */
 public class CountSubsetSum {
 
     private static int countSubsetSum(int arr[], int sum, int n) {
@@ -25,12 +35,17 @@ public class CountSubsetSum {
                 }
             }
         }
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= sum; j++)
+                System.out.printf("%4d", T[i][j]);
+            System.out.printf("\n");
+        }
         return T[n][sum];
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 5, 6, 7};
-        int sum = 9;
+        int[] arr = {1, 2, 3, 3};
+        int sum = 6;
         System.out.println("Result : " + countSubsetSum(arr, sum, arr.length));
     }
 }

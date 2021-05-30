@@ -3,12 +3,6 @@ package leetcode.linkedlist;
 public class LeetCode203RemoveElement {
 
     public static ListNode removeElements(ListNode head, int val) {
-//        while(null != head && head.val == val){
-//            head = head.next;
-//        }
-//        if(null == head){
-//            return head;
-//        }
         ListNode dummy_head = new ListNode(-1);
         dummy_head.next = head;
 
