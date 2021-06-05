@@ -1,11 +1,11 @@
 package immutable;
 
-public class User {
+public final class User {
 
-    private int userId;
-    private String name;
-    private String city;
-    private Age age;
+    private final int userId;
+    private final String name;
+    private final String city;
+    private final Age age;
 
     public User(int userId, String name, String city, Age age) {
         this.userId = userId;
@@ -17,6 +17,8 @@ public class User {
             clonedAge.setMonth(age.getMonth());
             clonedAge.setYear(age.getYear());
             this.age = clonedAge;
+        } else {
+            this.age = null;
         }
     }
 
