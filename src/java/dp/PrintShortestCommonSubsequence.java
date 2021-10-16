@@ -74,9 +74,6 @@ public class PrintShortestCommonSubsequence {
             stringBuilder.append(s.pop());
         }
 
-        System.out.println("==>" + stringBuilder.toString());
-
-
         return stringBuilder.toString();
     }
 }

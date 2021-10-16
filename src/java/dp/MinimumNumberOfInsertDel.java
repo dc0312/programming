@@ -13,6 +13,9 @@ public class MinimumNumberOfInsertDel {
         String s1 = "geeksforgeeks";
         String s2 = "geeks";
 
+//        String s1 = "heap";
+//        String s2 = "pea";
+
         minNoOfInsDel(s1, s2);
     }
 

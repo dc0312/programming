@@ -140,12 +140,10 @@ class TreeNode {
             TreeNode temp;
             if (null == rootNode.leftChild) {
                 temp = rootNode.rightChild;
-                rootNode = null;
                 return temp;
             }
             if (null == rootNode.rightChild) {
                 temp = rootNode.leftChild;
-                rootNode = null;
                 return temp;
             }
             temp = min(rootNode.rightChild);

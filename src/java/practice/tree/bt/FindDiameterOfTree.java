@@ -20,6 +20,7 @@ public class FindDiameterOfTree {
 
         System.out.println("Diameter " + tree.diaMeter());
         System.out.println("Diameter " + tree.diameterOfBinaryTree());
+        System.out.println("Diameter " + tree.diameterOfBinaryTreeNew());
     }
 
     static class TreeNode {
@@ -85,7 +86,7 @@ public class FindDiameterOfTree {
             }
         }
 
-        public DiaPair diameterOfBinaryTree(TreeNode root) {
+        private DiaPair diameterOfBinaryTree(TreeNode root) {
             if (null == root) {
                 DiaPair diaPair = new DiaPair();
                 diaPair.ht = -1;
@@ -100,6 +101,27 @@ public class FindDiameterOfTree {
             diaPair.ht = Math.max(ld.ht, lr.ht) + 1;
             return diaPair;
         }
+
+        /**
+         * Third way
+         */
+        public int diameterOfBinaryTreeNew() {
+            int[] diameter = new int[1];
+            diaNew(root, diameter);
+            return diameter[0];
+        }
+
+        private int diaNew(TreeNode root, int[] diameter) {
+            if (null == root) {
+                return 0;
+            }
+
+            int lh = diaNew(root.left, diameter);
+            int rh = diaNew(root.right, diameter);
+            diameter[0] = Math.max(diameter[0], lh + rh);
+            return 1 + Math.max(lh, rh);
+        }
+
     }
 
 }

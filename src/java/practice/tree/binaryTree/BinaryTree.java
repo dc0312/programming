@@ -144,24 +144,6 @@ class TreeNode {
         return deepNode;
     }
 
-    public TreeNode findDeepestNodeNew(TreeNode treeNode) {
-        TreeNode deepNode = treeNode;
-        while (null != deepNode.leftChild) {
-            deepNode = deepNode.leftChild;
-        }
-        return deepNode;
-    }
-
-    public TreeNode deleteDeepestNew(TreeNode treeNode) {
-        TreeNode deepNode = findDeepestNode(treeNode);
-        TreeNode tempNode = treeNode;
-        while (tempNode.leftChild != deepNode) {
-            tempNode = tempNode.leftChild;
-        }
-        tempNode.leftChild = null;
-        return deepNode;
-    }
-
     public TreeNode deleteDeepestNode(TreeNode treeNode) {
         TreeNode deepestNode = treeNode.findDeepestNode(treeNode);
         Queue customQueue = new Queue();
@@ -229,8 +211,7 @@ public class BinaryTree {
         tree.inOrder();
         tree.levelOrder();
         System.out.println("Deepest Node : " + tree.findDeepestNode());
-        System.out.println("Deepest Node : " + tree.findDeepestNodeNew());
-        tree.deleteDeepestNodeNew();
+        tree.deleteDeepestNode();
         tree.levelOrder();
 //        tree.delete(2);
 //        tree.levelOrder();
@@ -265,30 +246,12 @@ public class BinaryTree {
         }
     }
 
-    public int findDeepestNodeNew() {
-        if (null == rootNode) {
-            System.out.println("Tree is empty.");
-            return -1;
-        } else {
-            return rootNode.findDeepestNodeNew(rootNode).data;
-        }
-    }
-
     public int deleteDeepestNode() {
         if (null == rootNode) {
             System.out.println("Tree is empty.");
             return -1;
         } else {
             return rootNode.deleteDeepestNode(rootNode).data;
-        }
-    }
-
-    public int deleteDeepestNodeNew() {
-        if (null == rootNode) {
-            System.out.println("Tree is empty.");
-            return -1;
-        } else {
-            return rootNode.deleteDeepestNew(rootNode).data;
         }
     }
 

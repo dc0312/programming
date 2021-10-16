@@ -6,6 +6,8 @@ public class PrintLongestCommonSubsequence {
     public static void main(String[] args) {
         String s1 = "acbcf";
         String s2 = "abcdaf";
+//        String s1 = "12341";
+//        String s2 = "341213";
         System.out.println("Result : " + lcs(s1, s2));
     }
 

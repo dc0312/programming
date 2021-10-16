@@ -11,6 +11,7 @@ public class LeftViewOfATree {
         tree.root = new TreeNode(32);
         tree.root.left = new TreeNode(21);
         tree.root.left.left = new TreeNode(19);
+        tree.root.left.left.left = new TreeNode(15);
         tree.root.left.left.right = new TreeNode(27);
         tree.root.left.left.right.right = new TreeNode(28);
         tree.root.right = new TreeNode(47);
@@ -25,6 +26,13 @@ public class LeftViewOfATree {
 
         TreeNode(int data) {
             this.data = data;
+        }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "data=" + data +
+                    '}';
         }
     }
 
