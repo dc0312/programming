@@ -11,3 +11,25 @@ Group Anagrams --> Do it
 Find Common characters
 K-diff Pairs in an Array
 Subarray equals sum k
+
+
+
+
+TREE QUESTIONS
+==============
+1. Print Node to Root path.
+2. Lowest Common Ancestor
+3. Children Sum Property
+4. Flatten a tree to linked list
+4. Inorder + Preorder --> construct a tree
+
+GRAPH QUESTION
+===============
+1.https://www.geeksforgeeks.org/number-groups-formed-graph-friends/ Perfect friends problem
+2.
+
+
+
+TO DO
+=====
+https://www.geeksforgeeks.org/friends-pairing-problem/

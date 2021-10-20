@@ -1,5 +1,7 @@
 package leetcode.linkedlist;
 
+import java.util.List;
+
 /**
  * Given the head of a singly linked list, reverse the list, and return the reversed list.
  */
@@ -12,8 +14,10 @@ public class LeetCode206ReverseLL {
         head.next.next.next.next = new ListNode(5);
         LeetCode206ReverseLL leetCode206ReverseLL = new LeetCode206ReverseLL();
         leetCode206ReverseLL.display(head);
-        ListNode newHead = leetCode206ReverseLL.reverseList(head);
+        ListNode newHead = leetCode206ReverseLL.reverseListNew(head);
         leetCode206ReverseLL.display(newHead);
+        ListNode newHeadNew = leetCode206ReverseLL.reverseList(newHead);
+        leetCode206ReverseLL.display(newHeadNew);
     }
 
     public ListNode reverseList(ListNode head) {
@@ -25,6 +29,19 @@ public class LeetCode206ReverseLL {
             head = next;
         }
         return newHead;
+    }
+
+    public ListNode reverseListNew(ListNode head) {
+        ListNode current = head;
+        ListNode prev = null;
+        while (null != current) {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+        return head;
     }
 
     public void display(ListNode head) {
