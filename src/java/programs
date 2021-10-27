@@ -14,7 +14,7 @@ Subarray equals sum k
 
 
 
-
+########################################################################################################################
 TREE QUESTIONS
 ==============
 1. Print Node to Root path.
@@ -22,13 +22,31 @@ TREE QUESTIONS
 3. Children Sum Property
 4. Flatten a tree to linked list
 4. Inorder + Preorder --> construct a tree
+5. Serialize and Deserialize A tree
+6. Morris Traversal
+
+########################################################################################################################
 
 GRAPH QUESTION
 ===============
 1.https://www.geeksforgeeks.org/number-groups-formed-graph-friends/ Perfect friends problem
 2.
 
+########################################################################################################################
 
+LinkedList Questions
+====================
+1. Remove Duplicates
+2. Intersection of two LL
+3. Swap Nodes
+4. Partition List
+5. Odd Even Linked List
+EASY CAKE
+1. LL Cycle 1 and 2
+2. Palindrome (Practice Once in a week)
+3. Reverse LL
+4. Find Middle Element
+########################################################################################################################
 
 TO DO
 =====

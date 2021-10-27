@@ -15,16 +15,13 @@ public class LeetCode83RemoveDuplicates {
     }
 
     public static ListNode removeDuplicates(ListNode head) {
-        ListNode list = head;
+        ListNode current = head;
 
-        while (null != list) {
-            if(null == list.next){
-                break;
-            }
-            if(list.next.val == list.val){
-                list.next = list.next.next;
+        while (null != current && null != current.next) {
+            if(current.next.val == current.val){
+                current.next = current.next.next;
             }else{
-                list = list.next;
+                current = current.next;
             }
         }
         return head;

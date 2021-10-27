@@ -5,35 +5,36 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
-Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
-
-
-
-Example 1:
-
-Input: s = "cbaebabacd", p = "abc"
-Output: [0,6]
-Explanation:
-The substring with start index = 0 is "cba", which is an anagram of "abc".
-The substring with start index = 6 is "bac", which is an anagram of "abc".
-Example 2:
-
-Input: s = "abab", p = "ab"
-Output: [0,1,2]
-Explanation:
-The substring with start index = 0 is "ab", which is an anagram of "ab".
-The substring with start index = 1 is "ba", which is an anagram of "ab".
-The substring with start index = 2 is "ab", which is an anagram of "ab".
-* */
-public class LeetCode438FindAllAnagramsInAString {
+/**
+ * Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+ * <p>
+ * In other words, return true if one of s1's permutations is the substring of s2.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: s1 = "ab", s2 = "eidbaooo"
+ * Output: true
+ * Explanation: s2 contains one permutation of s1 ("ba").
+ * Example 2:
+ * <p>
+ * Input: s1 = "ab", s2 = "eidboaoo"
+ * Output: false
+ *
+ * Input: s1 = "trinitrophenylmethylnitramine", s2 = "dinitrophenylhydrazinetrinitrophenylmethylnitramine"
+ *  * Output: false
+ * "trinitrophenylmethylnitramine"
+ * "dinitrophenylhydrazinetrinitrophenylmethylnitramine"
+ */
+public class LeetCode567PermutationOfString {
     public static void main(String[] args) {
-        String s = "dinitrophenylhydrazinetrinitrophenylmethylnitramine", p = "trinitrophenylmethylnitramine";
-        List<Integer> ans = findAnagrams(s, p);
-        ans.stream().forEach(System.out::println);
+        String s1 = "trinitrophenylmethylnitramine";
+        String s2 = "dinitrophenylhydrazinetrinitrophenylmethylnitramine";
+        System.out.println("Result : " + checkInclusion(s1, s2));
     }
 
-    public static List<Integer> findAnagrams(String s, String p) {
+    private static boolean checkInclusion(String p, String s) {
         List<Integer> result = new ArrayList<>();
         Map<Character, Integer> countMap = new HashMap<>();
 
@@ -69,6 +70,6 @@ public class LeetCode438FindAllAnagramsInAString {
             end++;
         }
 
-        return result;
+        return result.size()>0;
     }
 }
