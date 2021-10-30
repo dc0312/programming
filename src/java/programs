@@ -10,7 +10,6 @@ Check if string s1 is subsequence of string s2 --> Do it
 Group Anagrams --> Do it
 Find Common characters
 K-diff Pairs in an Array
-Subarray equals sum k
 
 
 
@@ -51,3 +50,25 @@ EASY CAKE
 TO DO
 =====
 https://www.geeksforgeeks.org/friends-pairing-problem/
+
+########################################################################################################################
+Binary Search Questions
+=======================
+1. Binary Search in sorted and reverse sorted (Easy)
+2. Binary Searcg in sorted but order is not known (Easy)
+3. First and Last Occurrence of Element in sorted (Easy)
+4. Count Number of Elements in sorted array (Easy)
+5. Number of times Sorted array is rotated (Tricky)
+
+
+########################################################################################################################
+
+Sliding Window
+==============
+1. Maximum Sum Subarray of size K (Easy)
+2. First Negative Number in every Window of Size K (Easy)
+3. Count Anagrams and Find All anagrams (Medium) (Revise)
+4.
+
+########################################################################################################################
+
