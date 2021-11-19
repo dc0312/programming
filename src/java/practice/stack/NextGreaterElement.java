@@ -2,7 +2,7 @@ package practice.stack;
 
 import java.util.Arrays;
 
-public class NextGreaterElement {
+public class    NextGreaterElement {
     static class Stack {
         int n;
         int[] arr;

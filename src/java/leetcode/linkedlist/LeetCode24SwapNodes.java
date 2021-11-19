@@ -23,7 +23,7 @@ public class LeetCode24SwapNodes {
             ListNode aNode = runner.next;
             ListNode bNode = runner.next.next;
 
-            runner.next = bNode;
+            runner.next = aNode.next;
             aNode.next = bNode.next;
             bNode.next = aNode;
 

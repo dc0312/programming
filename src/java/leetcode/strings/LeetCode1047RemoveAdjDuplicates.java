@@ -1,5 +1,7 @@
 package leetcode.strings;
 
+import java.util.Stack;
+
 /*
 You are given a string s. A duplicate removal consists of choosing two adjacent and equal letters and removing them.
 
@@ -22,8 +24,31 @@ Output: "ay"
 */
 public class LeetCode1047RemoveAdjDuplicates {
     public static void main(String[] args) {
-        String str = "azxxzy";
+        String str = "azxxxzy";
         System.out.println(removeAdjacents(str));
+        System.out.println(removeAdjacents2(str));
+    }
+
+    private static String removeAdjacents2(String str) {
+        Stack<Character> stack = new Stack<>();
+
+        for(char ch : str.toCharArray()){
+            if(stack.isEmpty()){
+                stack.push(ch);
+            }else{
+                if(stack.peek()== ch){
+                    stack.pop();
+                }else{
+                    stack.push(ch);
+                }
+            }
+        }
+
+        String ans ="";
+        while(!stack.isEmpty()){
+            ans = stack.pop() +ans;
+        }
+        return ans;
     }
 
     private static String removeAdjacents(String S) {

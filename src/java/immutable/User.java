@@ -1,5 +1,7 @@
 package immutable;
 
+import java.util.Objects;
+
 public final class User {
 
     private final int userId;
@@ -57,32 +59,18 @@ public final class User {
 
     @Override
     public boolean equals(Object o) {
-        if (null == o || getClass() != o.getClass()) {
-            return false;
-        }
-
-        if (o == this) {
-            return true;
-        }
-
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-
-        return userId == user.getUserId() && (null != name && name.equals(user.getName()) && (null != city && city.equals(user.getCity())
-                && (null != age && age.equals(this.age))));
+        return userId == user.userId && Objects.equals(name, user.name) && Objects.equals(city, user.city) && Objects.equals(age, user.age);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, name, city, age);
+    }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        User user = (User) o;
-//        return userId == user.userId &&
-//                Objects.equals(name, user.name) &&
-//                Objects.equals(city, user.city) &&
-//                Objects.equals(age, user.age);
-//    }
-//
+    //
 //    @Override
 //    public int hashCode() {
 //        return Objects.hash(userId, name, city, age);

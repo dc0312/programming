@@ -2,11 +2,11 @@ package dp;
 
 import java.util.LinkedList;
 
-public class LongestCommonSubstring {
+public class LongestPalindromeSubstring {
 
     public static void main(String[] args) {
-        String s1 = "12321";
-        String s2 = "32147";
+        String s1 = "aaaabbaa";
+        String s2 = new StringBuilder(s1).reverse().toString();
         System.out.println("Result : " + lcs(s1, s2));
     }
 
@@ -38,7 +38,6 @@ public class LongestCommonSubstring {
                 }
                 max = Math.max(max, T[i][j]);
             }
-
         }
 
         return max;

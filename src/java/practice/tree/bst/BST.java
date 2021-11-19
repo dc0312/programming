@@ -130,8 +130,6 @@ class TreeNode {
     }
 
     public TreeNode delete(TreeNode rootNode, int data) {
-        Queue customQueue = new Queue();
-        customQueue.enqueue(rootNode);
         if (data < rootNode.data) {
             rootNode.leftChild = delete(rootNode.leftChild, data);
         } else if (data > rootNode.data) {

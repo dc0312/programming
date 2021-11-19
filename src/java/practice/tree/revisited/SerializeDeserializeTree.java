@@ -53,7 +53,6 @@ public class SerializeDeserializeTree {
                 if (!"#".equals(parts[i])) {
                     temp.leftChild = new TreeNode(Integer.parseInt(parts[i]));
                     queue.addLast(temp.leftChild);
-                    i++;
                 }
                 if (!"#".equals(parts[i])) {
                     temp.rightChild = new TreeNode(Integer.parseInt(parts[i]));
@@ -93,6 +92,8 @@ public class SerializeDeserializeTree {
         tree.root.rightChild = new TreeNode(3);
         tree.root.rightChild.leftChild = new TreeNode(5);
         tree.root.rightChild.leftChild.leftChild = new TreeNode(7);
+        tree.root.rightChild.leftChild.leftChild.leftChild = new TreeNode(9);
+        tree.root.rightChild.leftChild.leftChild.rightChild = new TreeNode(10);
         tree.root.rightChild.leftChild.rightChild = new TreeNode(8);
         String ser = tree.serialize();
         System.out.println(ser);
